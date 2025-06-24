@@ -1,0 +1,402 @@
+[
+  {
+    "id": "315",
+    "title": "最後の席替え",
+    "memory": "席替えのとき、となりの席に名前がないのを見て、一瞬だけ息が止まった。",
+    "feeling": "恥ずかしい",
+    "glitch_level": 1.0,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "369",
+    "title": "廊下ですれ違った瞬間",
+    "memory": "すれ違っただけなのに、背中がずっと熱かった。",
+    "feeling": "愛おしい",
+    "glitch_level": 0.55,
+    "visual_effect": "vhs_blur"
+  },
+  {
+    "id": "142",
+    "title": "なんでもない日",
+    "memory": "ただの放課後だったのに、匂いと光だけがやけに記憶に残ってる。",
+    "feeling": "愛おしい",
+    "glitch_level": 0.8,
+    "visual_effect": "screen_flicker"
+  },
+  {
+    "id": "153",
+    "title": "夏のチャイム",
+    "memory": "あのチャイムの音で、夏の終わりを知った気がした。",
+    "feeling": "苦い",
+    "glitch_level": 0.96,
+    "visual_effect": "slow_zoom"
+  },
+  {
+    "id": "787",
+    "title": "修学旅行のバス",
+    "memory": "バスの窓に映った顔が、思ってたより寂しそうだった。",
+    "feeling": "切ない",
+    "glitch_level": 0.41,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "602",
+    "title": "未送信のLINE",
+    "memory": "“また話そう”と打って、送信ボタンに指が届かなかった。",
+    "feeling": "恥ずかしい",
+    "glitch_level": 0.55,
+    "visual_effect": "scanline_noise"
+  },
+  {
+    "id": "160",
+    "title": "体育館裏の夕方",
+    "memory": "静かすぎるその場所で、息をする音さえ気になった。",
+    "feeling": "切ない",
+    "glitch_level": 0.62,
+    "visual_effect": "scanline_noise"
+  },
+  {
+    "id": "263",
+    "title": "文化祭の終わり",
+    "memory": "盛り上がってたはずなのに、最後の瞬間だけなぜか静かだった。",
+    "feeling": "愛おしい",
+    "glitch_level": 0.56,
+    "visual_effect": "slow_zoom"
+  },
+  {
+    "id": "996",
+    "title": "中間テストの答案用紙",
+    "memory": "白紙のテスト用紙を見つめてた自分の顔が、今も忘れられない。",
+    "feeling": "寂しい",
+    "glitch_level": 0.42,
+    "visual_effect": "scanline_noise"
+  },
+  {
+    "id": "627",
+    "title": "誰もいない教室",
+    "memory": "机が全部空っぽだった教室に、自分の声だけが響いた。",
+    "feeling": "苦い",
+    "glitch_level": 0.9,
+    "visual_effect": "slow_zoom"
+  },
+  {
+    "id": "951",
+    "title": "放課後の図書室",
+    "memory": "誰も話してない図書室で、誰かに見られてる気がした。",
+    "feeling": "寂しい",
+    "glitch_level": 0.93,
+    "visual_effect": "grain_overlay"
+  },
+  {
+    "id": "948",
+    "title": "朝の昇降口",
+    "memory": "昇降口のすりガラス越しに見えた影が、誰よりも気になった。",
+    "feeling": "恥ずかしい",
+    "glitch_level": 0.4,
+    "visual_effect": "screen_flicker"
+  },
+  {
+    "id": "575",
+    "title": "下駄箱のメモ",
+    "memory": "メモには名前もなかったのに、なぜかすぐに誰か分かった。",
+    "feeling": "苦い",
+    "glitch_level": 0.79,
+    "visual_effect": "grain_overlay"
+  },
+  {
+    "id": "499",
+    "title": "雨の日の帰り道",
+    "memory": "傘を忘れて走った帰り道、髪から雫が落ちるたびに心も冷えた。",
+    "feeling": "やりきれない",
+    "glitch_level": 0.78,
+    "visual_effect": "screen_flicker"
+  },
+  {
+    "id": "467",
+    "title": "昼休みの屋上",
+    "memory": "鍵の閉まらない屋上で、誰にも話せないことを空に向かって吐いた。",
+    "feeling": "苦い",
+    "glitch_level": 0.51,
+    "visual_effect": "screen_flicker"
+  },
+  {
+    "id": "712",
+    "title": "保健室の静けさ",
+    "memory": "静かすぎる保健室で、呼吸の音だけが自分を責めていた。",
+    "feeling": "愛おしい",
+    "glitch_level": 0.53,
+    "visual_effect": "slow_zoom"
+  },
+  {
+    "id": "384",
+    "title": "視聴覚室の気配",
+    "memory": "プロジェクターの明かりだけがついた部屋で、ふと涙が出そうになった。",
+    "feeling": "やりきれない",
+    "glitch_level": 0.98,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "190",
+    "title": "窓際の席",
+    "memory": "光がいつもより強かった午後、窓の外に答えがある気がした。",
+    "feeling": "やりきれない",
+    "glitch_level": 1.0,
+    "visual_effect": "scanline_noise"
+  },
+  {
+    "id": "205",
+    "title": "制服のまま駆け出した日",
+    "memory": "何かから逃げたくて、ただ走った放課後がある。",
+    "feeling": "寂しい",
+    "glitch_level": 0.4,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "929",
+    "title": "チャイム前の沈黙",
+    "memory": "チャイムの直前、誰もが同じことを考えてた気がした。",
+    "feeling": "寂しい",
+    "glitch_level": 0.57,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "252",
+    "title": "廊下で転んだ瞬間",
+    "memory": "転んだのに誰も笑わなかった。なのにそれが一番恥ずかしかった。",
+    "feeling": "やりきれない",
+    "glitch_level": 0.46,
+    "visual_effect": "vhs_blur"
+  },
+  {
+    "id": "312",
+    "title": "体育の後の水道",
+    "memory": "水を飲んだ瞬間、何もかもどうでもよくなった気がした。",
+    "feeling": "やりきれない",
+    "glitch_level": 0.41,
+    "visual_effect": "vhs_blur"
+  },
+  {
+    "id": "614",
+    "title": "仮病で休んだ日",
+    "memory": "嘘をついて休んだ日、窓の外はやけに明るかった。",
+    "feeling": "苦い",
+    "glitch_level": 0.98,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "845",
+    "title": "友達の涙",
+    "memory": "泣いている友達に、何も言えなかった自分が悔しかった。",
+    "feeling": "恥ずかしい",
+    "glitch_level": 0.77,
+    "visual_effect": "slow_zoom"
+  },
+  {
+    "id": "364",
+    "title": "失くしたペン",
+    "memory": "あのペンだけが、誰とも話せなかった日々を知っている。",
+    "feeling": "寂しい",
+    "glitch_level": 0.59,
+    "visual_effect": "slow_zoom"
+  },
+  {
+    "id": "834",
+    "title": "SNSの既読",
+    "memory": "既読がついて3日、まだ返事はこない。",
+    "feeling": "切ない",
+    "glitch_level": 0.65,
+    "visual_effect": "vhs_blur"
+  },
+  {
+    "id": "446",
+    "title": "クラスLINEの通知",
+    "memory": "通知音が怖くて、スマホを裏返したままにした。",
+    "feeling": "苦い",
+    "glitch_level": 0.7,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "683",
+    "title": "音楽室のピアノ",
+    "memory": "ピアノの音が響いた教室で、自分だけが黙っていた。",
+    "feeling": "切ない",
+    "glitch_level": 0.93,
+    "visual_effect": "grain_overlay"
+  },
+  {
+    "id": "965",
+    "title": "合唱練習の空気",
+    "memory": "歌うことが苦手だったけど、その日はなぜか声が出た。",
+    "feeling": "やりきれない",
+    "glitch_level": 0.61,
+    "visual_effect": "grain_overlay"
+  },
+  {
+    "id": "950",
+    "title": "風に揺れたカーテン",
+    "memory": "カーテンが揺れるたび、誰かの名前を思い出してしまった。",
+    "feeling": "寂しい",
+    "glitch_level": 0.91,
+    "visual_effect": "vhs_blur"
+  },
+  {
+    "id": "670",
+    "title": "部活帰りの駅",
+    "memory": "電車の中、部活帰りの汗がやけに重たく感じた。",
+    "feeling": "恥ずかしい",
+    "glitch_level": 0.79,
+    "visual_effect": "grain_overlay"
+  },
+  {
+    "id": "881",
+    "title": "お弁当の残り",
+    "memory": "一人で食べるお弁当の味だけは、ずっと変わらなかった。",
+    "feeling": "切ない",
+    "glitch_level": 0.7,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "906",
+    "title": "自販機の前で",
+    "memory": "ジュースを選んでるふりをして、話しかけられるのを待っていた。",
+    "feeling": "苦い",
+    "glitch_level": 0.93,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "727",
+    "title": "修了式の拍手",
+    "memory": "拍手の中に、自分の気持ちは混ざってなかった。",
+    "feeling": "切ない",
+    "glitch_level": 0.54,
+    "visual_effect": "scanline_noise"
+  },
+  {
+    "id": "199",
+    "title": "制服のポケット",
+    "memory": "ポケットの中で、しわくちゃになった手紙を握っていた。",
+    "feeling": "切ない",
+    "glitch_level": 0.42,
+    "visual_effect": "vhs_blur"
+  },
+  {
+    "id": "445",
+    "title": "バス停の影",
+    "memory": "夕方のバス停で、誰も来ないのに30分も待ってた。",
+    "feeling": "愛おしい",
+    "glitch_level": 0.87,
+    "visual_effect": "slow_zoom"
+  },
+  {
+    "id": "946",
+    "title": "渡せなかった手紙",
+    "memory": "手紙は書いたけど、封筒に名前を書けなかった。",
+    "feeling": "恥ずかしい",
+    "glitch_level": 0.63,
+    "visual_effect": "screen_flicker"
+  },
+  {
+    "id": "712",
+    "title": "写真の整理",
+    "memory": "写真を整理してたら、写ってない誰かのことばかり思い出した。",
+    "feeling": "愛おしい",
+    "glitch_level": 1.0,
+    "visual_effect": "slow_zoom"
+  },
+  {
+    "id": "666",
+    "title": "鏡越しの自分",
+    "memory": "鏡に映った自分が、まったく知らない他人に見えた。",
+    "feeling": "苦い",
+    "glitch_level": 0.43,
+    "visual_effect": "slow_zoom"
+  },
+  {
+    "id": "564",
+    "title": "はじめての嘘",
+    "memory": "嘘をついた日の帰り道、靴がやけに重かった。",
+    "feeling": "寂しい",
+    "glitch_level": 0.55,
+    "visual_effect": "screen_flicker"
+  },
+  {
+    "id": "536",
+    "title": "誰も信じてくれなかった日",
+    "memory": "あの日の話を、誰も信じてくれなかった。",
+    "feeling": "寂しい",
+    "glitch_level": 0.64,
+    "visual_effect": "screen_flicker"
+  },
+  {
+    "id": "897",
+    "title": "黙って背中を押してくれた友達",
+    "memory": "“大丈夫”って言わずに隣にいてくれたのが、いちばん刺さった。",
+    "feeling": "恥ずかしい",
+    "glitch_level": 0.83,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "221",
+    "title": "靴ひもを結びなおした朝",
+    "memory": "朝、靴ひもを結びなおしただけなのに、なぜか泣きそうだった。",
+    "feeling": "寂しい",
+    "glitch_level": 0.84,
+    "visual_effect": "vhs_blur"
+  },
+  {
+    "id": "636",
+    "title": "泣きたいのに泣けなかった夜",
+    "memory": "泣く理由がわからなくて、布団の中で息を潜めた夜がある。",
+    "feeling": "寂しい",
+    "glitch_level": 0.43,
+    "visual_effect": "grain_overlay"
+  },
+  {
+    "id": "752",
+    "title": "教室の隅のノート",
+    "memory": "ノートの隅に書いた名前、誰にも見つかりたくなかった。",
+    "feeling": "切ない",
+    "glitch_level": 0.46,
+    "visual_effect": "scanline_noise"
+  },
+  {
+    "id": "467",
+    "title": "雨でにじんだ文字",
+    "memory": "にじんだ文字を、必死に読み返しても意味はわからなかった。",
+    "feeling": "やりきれない",
+    "glitch_level": 0.85,
+    "visual_effect": "screen_flicker"
+  },
+  {
+    "id": "497",
+    "title": "夕焼けの渡り廊下",
+    "memory": "渡り廊下の風が強すぎて、涙なのか分からなかった。",
+    "feeling": "恥ずかしい",
+    "glitch_level": 0.88,
+    "visual_effect": "vhs_blur"
+  },
+  {
+    "id": "761",
+    "title": "開かれなかった返事",
+    "memory": "返事がこなかったことで、全部分かってしまった気がする。",
+    "feeling": "切ない",
+    "glitch_level": 0.98,
+    "visual_effect": "glitch_fade"
+  },
+  {
+    "id": "340",
+    "title": "沈黙の5秒間",
+    "memory": "黙ってた5秒のあいだに、たぶん全部終わってた。",
+    "feeling": "切ない",
+    "glitch_level": 0.73,
+    "visual_effect": "grain_overlay"
+  },
+  {
+    "id": "553",
+    "title": "笑われた夢",
+    "memory": "夢を話したら笑われた。でも本気だった。",
+    "feeling": "やりきれない",
+    "glitch_level": 0.47,
+    "visual_effect": "glitch_fade"
+  }
+]
