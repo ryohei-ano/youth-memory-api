@@ -64,7 +64,7 @@
 <body>
   <form id="memoryForm">
     <label for="text">&gt; あなたの記憶を入力してください</label>
-    <textarea id="text" name="text" required placeholder="記憶を書いてください..."></textarea>
+    <textarea id="text" name="memory" required placeholder="記憶を書いてください..."></textarea>
     <button type="submit">&gt; ENTER</button>
     <div class="status" id="status"></div>
   </form>
@@ -73,14 +73,26 @@
     const form = document.getElementById('memoryForm');
     const statusEl = document.getElementById('status');
 
-    const bannedWords = [
-      'ちんこ', 'まんこ', 'セックス', 'フェラ', 'アナル',
-      '中出し', '乳首', '勃起', 'レイプ', '精子',
-      '射精', '陰茎', '膣', 'オナニー', '変態'
+    const bannedPatterns = [
+      /ち[んﾝ]こ/, /ま[んﾝ]こ/, /せっくす/, /ｾｯｸｽ/, /せくす/, /se[xくす]/,
+      /ふぇら/, /フェラ/, /fela/, /あなる/, /アナル/,
+      /なかだし/, /中出し/, /ちくび/, /乳首/,
+      /ぼっき/, /勃起/, /れいぷ/, /レイプ/,
+      /せいし/, /精子/, /しゃせい/, /射精/,
+      /いんけい/, /陰茎/, /ちつ/, /膣/,
+      /おなにー/, /オナニー/, /へんたい/, /変態/
     ];
 
-    function containsBannedWords(text) {
-      return bannedWords.some(word => text.includes(word));
+    function normalizeText(text) {
+      return text
+        .toLowerCase()
+        .replace(/[Ａ-Ｚａ-ｚ０-９]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
+        .replace(/[\s_ー\-\.・、。]+/g, '');
+    }
+
+    function containsBannedWords(rawText) {
+      const normalized = normalizeText(rawText);
+      return bannedPatterns.some(pattern => pattern.test(normalized));
     }
 
     form.addEventListener('submit', async (e) => {
@@ -94,11 +106,11 @@
         return;
       }
 
-    const res = await fetch('https://youth-memory-api.vercel.app/api/submit-memory', {
+      const res = await fetch('https://youth-memory-api.vercel.app/api/submit-memory', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ memory: text }),
-    });
+      });
 
       if (res.ok) {
         statusEl.textContent = '> 投稿されました';
