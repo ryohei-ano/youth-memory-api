@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Memory</title>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'DotGothic16', sans-serif;
+      background-color: transparent;
+      color: #fff;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    label {
+      color: #fff;
+    }
+    textarea {
+      font-family: inherit;
+      font-size: 16px;
+      padding: 12px;
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      font-family: inherit;
+      font-size: 16px;
+      padding: 10px;
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+    .status {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #fff;
+    }
+    .glitch {
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { opacity: 1; }
+      25% { opacity: 0.8; }
+      50% { opacity: 1; }
+      75% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <form id="memoryForm">
+    <label for="text">&gt; あなたの記憶を入力してください</label>
+    <textarea id="text" name="text" required placeholder="記憶を書いてください..."></textarea>
+    <button type="submit">&gt; 送信</button>
+    <div class="status" id="status"></div>
+  </form>
+
+  <script>
+    const form = document.getElementById('memoryForm');
+    const statusEl = document.getElementById('status');
+
+    const bannedWords = [
+      'ちんこ', 'まんこ', 'セックス', 'フェラ', 'アナル',
+      '中出し', '乳首', '勃起', 'レイプ', '精子',
+      '射精', '陰茎', '膣', 'オナニー', '変態'
+    ];
+
+    function containsBannedWords(text) {
+      return bannedWords.some(word => text.includes(word));
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = document.getElementById('text').value.trim();
+      if (!text) return;
+
+      if (containsBannedWords(text)) {
+        statusEl.textContent = '> 不適切な言葉が含まれています';
+        statusEl.classList.add('glitch');
+        return;
+      }
+
+      const res = await fetch('/api/submit-memory', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+      });
+
+      if (res.ok) {
+        statusEl.textContent = '> 投稿されました';
+        statusEl.classList.add('glitch');
+        form.reset();
+      } else {
+        statusEl.textContent = '> 投稿に失敗しました';
+        statusEl.classList.add('glitch');
+      }
+    });
+  </script>
+</body>
+</html>
