@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youth Memory - Recent or Random</title>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background-color: transparent;
+      color: #fff;
+      font-family: 'DotGothic16', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      overflow: hidden;
+      white-space: pre-wrap;
+    }
+    #text {
+      display: inline;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1em;
+      background: #fff;
+      animation: blink 0.7s steps(1) infinite;
+      vertical-align: bottom;
+    }
+    @keyframes blink {
+      50% { background: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <div id="text"></div><span class="cursor"></span>
+
+  <script>
+    const API_TYPE = getQueryParam('type') || 'random';
+    const API_URL = API_TYPE === 'recent'
+      ? '/api/recent-memory'
+      : '/api/random-memory';
+
+    function getQueryParam(key) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(key);
+    }
+
+    async function fetchMemory() {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+      return data.text || '';
+    }
+
+    async function typeText(text) {
+      const textEl = document.getElementById("text");
+      textEl.innerHTML = '';
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          const char = text[i];
+          textEl.innerHTML += char === "\n" ? "<br>" : char;
+          i++;
+          setTimeout(type, 20);
+        }
+      }
+      type();
+    }
+
+    async function run() {
+      const memory = await fetchMemory();
+      typeText(memory);
+    }
+
+    run();
+
+    // 自動更新（ランダムタイプのみ）
+    if (API_TYPE === 'random') {
+      setInterval(run, 15000); // 15秒ごとに切り替え
+    }
+  </script>
+</body>
+</html>
