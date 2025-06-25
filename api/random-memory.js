@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   try {
     const { data, error } = await supabase
       .from("memories")
-      .select("memory");
+      .select("id, memory, created_at");
 
     if (error) {
       console.error("Supabase error:", error);
