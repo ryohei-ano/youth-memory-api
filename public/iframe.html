@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Youth Memory - Recent or Random</title>
+  <title>Youth Memory - Terminal View</title>
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
   <style>
     body {
@@ -35,12 +35,11 @@
 </head>
 <body>
   <div id="text"></div><span class="cursor"></span>
-
   <script>
     const API_TYPE = getQueryParam('type') || 'random';
     const API_URL = API_TYPE === 'recent'
       ? 'https://youth-memory-api.vercel.app/api/recent-memory'
-      : 'https://youth-memory-api.vercel.app/api/random-memory'; // ← ここにあなたのURL
+      : 'https://youth-memory-api.vercel.app/api/random-memory';
 
     function getQueryParam(key) {
       const params = new URLSearchParams(window.location.search);
@@ -78,11 +77,16 @@
       typeText(memory);
     }
 
+    window.addEventListener('message', (event) => {
+      if (event.data === 'reload-memory') {
+        run();
+      }
+    });
+
     run();
 
-    // 自動更新（ランダムタイプのみ）
     if (API_TYPE === 'random') {
-      setInterval(run, 10000); // 15秒ごとに切り替え
+      setInterval(run, 10000); // 10秒ごとに切り替え
     }
   </script>
 </body>
