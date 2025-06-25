@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -6,14 +6,24 @@ const supabase = createClient(
 );
 
 export default async function handler(req, res) {
-  const { data, error } = await supabase
-    .from('memories')
-    .select('*')
-    .order('random_value') // 事前に random_value カラムがある前提
-    .limit(1)
-    .single();
+  try {
+    const { data, error } = await supabase
+      .from("memories")
+      .select("memory");
 
-  if (error) return res.status(500).json({ error: error.message });
+    if (error) {
+      console.error("Supabase error:", error);
+      return res.status(500).json({ error: "DB fetch error" });
+    }
 
-  res.status(200).json(data);
+    if (!data || data.length === 0) {
+      return res.status(404).json({ error: "No data found" });
+    }
+
+    const random = data[Math.floor(Math.random() * data.length)];
+    res.status(200).json(random);
+  } catch (err) {
+    console.error("Handler crash:", err);
+    res.status(500).json({ error: "Server crash" });
+  }
 }
