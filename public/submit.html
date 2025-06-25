@@ -65,7 +65,7 @@
   <form id="memoryForm">
     <label for="text">&gt; あなたの記憶を入力してください</label>
     <textarea id="text" name="text" required placeholder="記憶を書いてください..."></textarea>
-    <button type="submit">&gt; 送信</button>
+    <button type="submit">&gt; ENTER</button>
     <div class="status" id="status"></div>
   </form>
 
@@ -94,7 +94,7 @@
         return;
       }
 
-      const res = await fetch('https://youth-memory-api.vercel.app/api/submit-memory', {
+      const res = await fetch('/api/submit-memory', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text }),
