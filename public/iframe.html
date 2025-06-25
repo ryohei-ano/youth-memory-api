@@ -39,8 +39,8 @@
   <script>
     const API_TYPE = getQueryParam('type') || 'random';
     const API_URL = API_TYPE === 'recent'
-      ? '/api/recent-memory'
-      : '/api/random-memory';
+      ? 'https://youth-memory-api.vercel.app/api/recent-memory'
+      : 'https://youth-memory-api.vercel.app/api/random-memory'; // ← ここにあなたのURL
 
     function getQueryParam(key) {
       const params = new URLSearchParams(window.location.search);
@@ -48,9 +48,14 @@
     }
 
     async function fetchMemory() {
-      const res = await fetch(API_URL);
-      const data = await res.json();
-      return data.text || '';
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        return data.memory || '';
+      } catch (err) {
+        console.error("Fetch failed:", err);
+        return '--- Memory Load Failed ---';
+      }
     }
 
     async function typeText(text) {
@@ -77,7 +82,7 @@
 
     // 自動更新（ランダムタイプのみ）
     if (API_TYPE === 'random') {
-      setInterval(run, 15000); // 15秒ごとに切り替え
+      setInterval(run, 10000); // 15秒ごとに切り替え
     }
   </script>
 </body>
