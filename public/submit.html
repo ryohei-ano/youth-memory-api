@@ -94,11 +94,11 @@
         return;
       }
 
-      const res = await fetch('/api/submit-memory', {
+    const res = await fetch('https://youth-memory-api.vercel.app/api/submit-memory', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text }),
-      });
+        body: JSON.stringify({ memory: text }),
+    });
 
       if (res.ok) {
         statusEl.textContent = '> 投稿されました';
