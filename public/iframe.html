@@ -79,10 +79,10 @@
 
     window.addEventListener('message', (event) => {
       if (event.data === 'reload-memory') {
-        run();
+        run(); // ← fetch → typeText 実行
       }
     });
-
+    // 初回実行
     run();
 
     if (API_TYPE === 'random') {

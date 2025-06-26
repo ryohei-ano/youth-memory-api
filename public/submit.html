@@ -140,7 +140,7 @@
         // 表示中の iframe に通知
         const iframes = document.querySelectorAll('iframe');
         iframes.forEach(iframe => {
-          iframe.contentWindow.postMessage('reload-memory', '*');
+          window.parent.postMessage('reload-memory', '*');
         });
       } else {
         statusEl.textContent = '> 投稿に失敗しました';
