@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Youth Memory - Terminal View</title>
+  <title>Youth Memory - Terminal</title>
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
   <style>
     body {
@@ -35,6 +35,7 @@
 </head>
 <body>
   <div id="text"></div><span class="cursor"></span>
+
   <script>
     const API_TYPE = getQueryParam('type') || 'random';
     const API_URL = API_TYPE === 'recent'
@@ -50,7 +51,14 @@
       try {
         const res = await fetch(API_URL);
         const data = await res.json();
-        return data.memory || '';
+
+        const id = data.memory_id || '';
+        const created = data.created_at
+          ? new Date(data.created_at).toLocaleString('ja-JP')
+          : '';
+        const content = data.memory || '';
+
+        return `> ${id} がログインしました\n> "${content}"\n\n[${created}]`;
       } catch (err) {
         console.error("Fetch failed:", err);
         return '--- Memory Load Failed ---';
@@ -77,16 +85,17 @@
       typeText(memory);
     }
 
+    // Listen for reload trigger
     window.addEventListener('message', (event) => {
       if (event.data === 'reload-memory') {
-        run(); // ← fetch → typeText 実行
+        run();
       }
     });
-    // 初回実行
+
     run();
 
     if (API_TYPE === 'random') {
-      setInterval(run, 10000); // 10秒ごとに切り替え
+      setInterval(run, 10000); // 10秒ごとに更新
     }
   </script>
 </body>
