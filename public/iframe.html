@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Youth Memory - Terminal</title>
+  <title>Youth Memory</title>
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
   <style>
     body {
@@ -52,13 +52,16 @@
         const res = await fetch(API_URL);
         const data = await res.json();
 
-        const id = data.memory_id || '';
-        const created = data.created_at
-          ? new Date(data.created_at).toLocaleString('ja-JP')
+        const { memory, memory_id, created_at } = data;
+        const date = created_at
+          ? new Date(created_at).toLocaleString('ja-JP', {
+              dateStyle: 'short',
+              timeStyle: 'short',
+              timeZone: 'Asia/Tokyo'
+            })
           : '';
-        const content = data.memory || '';
 
-        return `> ${id} がログインしました\n> "${content}"\n\n[${created}]`;
+        return `> ${memory_id} がログインしました\n> “${memory}”\n\n(${date})`;
       } catch (err) {
         console.error("Fetch failed:", err);
         return '--- Memory Load Failed ---';
@@ -85,7 +88,6 @@
       typeText(memory);
     }
 
-    // Listen for reload trigger
     window.addEventListener('message', (event) => {
       if (event.data === 'reload-memory') {
         run();
@@ -95,7 +97,7 @@
     run();
 
     if (API_TYPE === 'random') {
-      setInterval(run, 10000); // 10秒ごとに更新
+      setInterval(run, 10000);　//10秒ごとに更新
     }
   </script>
 </body>
